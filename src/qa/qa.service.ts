@@ -19,6 +19,10 @@ export class QaService {
     return await this.questionModel.findByIdAndUpdate(id, data, {new: true});
   }
 
+  async remove(id: string): Promise<Question> {
+    return await this.questionModel.findByIdAndDelete(id);
+  }
+
   async findAll(): Promise<Question[]> {
     return await this.questionModel.find().exec();
   }

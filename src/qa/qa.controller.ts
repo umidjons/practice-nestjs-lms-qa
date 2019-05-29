@@ -28,5 +28,7 @@ export class QaController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id) { }
+  remove(@Param('id') id): Promise<Question> {
+    return this.qaService.remove(id);
+  }
 }
