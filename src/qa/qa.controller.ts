@@ -23,7 +23,9 @@ export class QaController {
   }
 
   @Put(':id')
-  update(@Body() data, @Param('id') id) { }
+  update(@Body() data, @Param('id') id): Promise<Question> {
+    return this.qaService.update(data, id);
+  }
 
   @Delete(':id')
   remove(@Param('id') id) { }

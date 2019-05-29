@@ -15,6 +15,10 @@ export class QaService {
     return await question.save();
   }
 
+  async update(data: QuestionCreateDto, id: string): Promise<Question> {
+    return await this.questionModel.findByIdAndUpdate(id, data, {new: true});
+  }
+
   async findAll(): Promise<Question[]> {
     return await this.questionModel.find().exec();
   }
